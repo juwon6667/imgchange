@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 이미지변경</title>
+    <link rel="stylesheet" href="css/08.css">
+</head>
+
+<body>
+    <section class="cont01">
+        <div>
+            <img id="bg_img" src="img/beach1.jpg" alt="해변1">
+
+            <div class="info">
+                <strong>2022.09.26 월요일</strong>
+                <h3>컨텐츠 제목 작성하기</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro distinctio vitae blanditiis
+                    voluptatibus
+                    repudiandae ipsa quasi temporibus omnis dolor beatae quos enim sapiente doloribus accusamus ullam,
+                    reprehenderit labore. Veritatis, nisi!</p>
+                <button id="btn">이미지보기
+                    <span id="num_text">1</span>/3
+                </button>
+            </div><!-- info end -->
+
+        </div>
+    </section><!-- cont01 end -->
+
+    <script>
+        let btn = document.getElementById('btn');
+        let sectionImg = document.getElementById('bg_img');
+
+        let Img1 = 'img/beach1.jpg';
+        let Img2 = 'img/beach2.jpg';
+        let Img3 = 'img/beach3.jpg';
+        let imgList = [Img1, Img2, Img3];
+
+        let numText = document.getElementById('num_text');
+        let num_List = ['1', '2', '3'];
+        let num = 0;
+
+        let i = 0;
+
+        // btn을 클릭했을 떄 이벤트 실행
+        // 버튼을 클릭할 때 마다 i값을 증감;
+        // 조건문 i값이 imgList가 가지는 갯수와 동일할 때
+        // i값은 0
+
+        // 변수명 sectionImg의 경로는 imgList로 가진다
+
+        btn.onclick = function () {
+            i++;
+            num++;
+
+            if (i >= imgList.length) {
+                i = 0;
+                num = 0;
+            }
+            sectionImg.src = imgList[i];
+            numText.innerText = num_List[i];
+
+        }
+    </script>
+
+</body>
+
+</html>
